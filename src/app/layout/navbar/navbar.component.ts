@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+
+import {LoginComponent} from '@app/login/login.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
+  login() {
+    const modalRef = this.modalService.open(LoginComponent);
+  }
 }
