@@ -9,13 +9,13 @@
     <div class="form-group row">
       <label for="loginInput" class="col-4 col-form-label">логин</label>
       <div class="col-8">
-        <input type="text" class="form-control" id="loginInput">
+        <input [(ngModel)]="loginData.login" type="text" class="form-control" id="loginInput" name="login" >
       </div>
     </div>
     <div class="form-group row">
       <label for="passwdInput" class="col-4 col-form-label">Пароль</label>
       <div class="col-8">
-        <input type="text" class="form-control" id="passwdInput">
+        <input [(ngModel)]="loginData.passwd" name="passwd" class="form-control" id="passwdInput" >
       </div>
     </div>
   </form>
@@ -23,5 +23,6 @@
   <div class="row">Новичок? Тогда <a (click)="openRegisterForm()">зарегистрируйся</a></div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  <button type="button" class="btn btn-primary" (click)="login()">OK</button>
+  <button type="button" class="btn btn-secondary btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
 </div>
