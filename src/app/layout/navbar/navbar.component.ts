@@ -10,7 +10,9 @@ import {LoginComponent} from '@app/login/login.component';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit() {
   }

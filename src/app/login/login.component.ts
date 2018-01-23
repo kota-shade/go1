@@ -29,7 +29,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(loginForm: NgForm) {
-    return this.authService.login(loginForm.value);
+    let res = this.authService.login(loginForm.value);
+    res.subscribe(data => {
+      console.log('SUCCESS AUTH DATA =', data);
+      console.log('AUTH STATE = ', this.authService.isLoggedIn());
+    }, err => {
+      console.log('ERROR ', err);
+      console.log('AUTH STATE = ', this.authService.isLoggedIn());
+    });
+
+    return false;
   }
 
   resetPasswd() {
